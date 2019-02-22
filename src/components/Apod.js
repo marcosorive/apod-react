@@ -28,7 +28,7 @@ export class Apod extends Component {
 
 	async getApod(date){
 		try{
-			let response = await fetch("https://api.nasa.gov/planetary/apod?date="+date+"DEMO_KEY");
+			let response = await fetch("https://api.nasa.gov/planetary/apod?date="+date+"&api_key=DEMO_KEY",{mode:"cors"});
 			if(await response.ok){
 				response = await response.json()
 				this.setState({
